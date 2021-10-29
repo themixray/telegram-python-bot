@@ -8,7 +8,11 @@ token = 'TOKEN'
 client = telegram_bot.client(token)
 client.whitelist = [YOURID]
 
-@client.command
+@client.command()
+def help(update, context):
+    update.message.reply_text('Commands: /Ping!')
+
+@client.command('Ping!')
 def ping(update, context):
     update.message.reply_text('Pong!')
 
