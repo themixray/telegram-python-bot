@@ -6,7 +6,7 @@ import telegram_bot
 
 token = 'TOKEN'
 client = telegram_bot.client(token)
-client.whitelist = [934172244]
+client.whitelist = [YOURID]
 
 @client.command
 def ping(update, context):
