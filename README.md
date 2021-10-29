@@ -15,7 +15,7 @@ def bop(update, context):
     while file_extension not in allowed_extension:
         url = requests.get('https://random.dog/woof.json').json()['url']
         file_extension = re.search("([^.]*)$",url).group(1).lower()
-    update.message.reply_text(text='123', photo=url)
+    update.message.reply_photo(photo=url)
 
 client.start()
 
