@@ -22,11 +22,11 @@ def help(update, args):
     update.message.reply_text('Commands:'+cmds)
 
 @client.command('ping', 'Just a description')
-def ping(update, context):
+def ping(update, args):
     update.message.reply_text('Pong!')
 
 @client.message
-def handler(update, context):
+def handler(update):
     update.message.reply_text(update.message.text)
 
 client.start()
