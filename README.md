@@ -19,7 +19,7 @@ def help(update, args):
             cmds += i.description
     update.message.reply_text('Commands:'+cmds)
 
-@client.command('ping')
+@client.command('ping', 'Just a description')
 def ping(update, context):
     update.message.reply_text('Pong!')
 
