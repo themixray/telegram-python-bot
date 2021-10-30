@@ -9,8 +9,15 @@ client = telegram_bot.client(token)
 client.whitelist = [YOURID]
 
 @client.command()
-def help(update, context):
-    update.message.reply_text('Commands: /ping')
+def help(update, args):
+    cmds = ''
+    for i in client.commands:
+        cmds += '\n/'
+        cmds += i.command
+        if i.description != '':
+            cmds += ' - '
+            cmds += i.description
+    update.message.reply_text('Commands:'+cmds)
 
 @client.command('ping')
 def ping(update, context):
