@@ -5,8 +5,10 @@
 import telegram_bot
 
 token = 'TOKEN'
+myid = YOURID
 client = telegram_bot.client(token)
-client.whitelist = [YOURID]
+client.whitelist = [myid]
+client.bot.send_message(myid, 'Hello!')
 
 @client.command()
 def help(update, args):
